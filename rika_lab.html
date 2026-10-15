@@ -20,8 +20,32 @@ footer{border-top:1px solid #d0ccbf;padding:22px 20px 30px;color:#76796d;font-si
 @media(max-width:370px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding:8px 0}}
 
 .notice{margin:14px 0;padding:10px 12px;background:#edf2e9;border-left:3px solid #718766;color:#43523e;font-size:13px}.pager{display:flex;justify-content:center;align-items:center;gap:14px;padding:22px 0 34px;color:var(--muted);font-size:13px}.pager button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:7px;padding:9px 15px;cursor:pointer;font:inherit}.pager button:disabled{opacity:.4;cursor:not-allowed}.pager button:not(:disabled):hover{background:#edf2e9;border-color:#8b9e83}
+
+/* SNS共有ボタン：上部バーに横並び */
+.header-bottom{align-items:center;row-gap:8px}
+.share-section{display:flex;align-items:center;gap:10px;margin-left:auto;padding-left:14px;border-left:1px solid #c2c9b6}
+.share-heading{font-size:10px;font-weight:800;white-space:nowrap;color:#52644e}
+.share-grid{display:flex;align-items:center;gap:9px}
+.share-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:37px;padding:0;border:0;background:transparent;color:inherit;text-decoration:none;font:inherit;cursor:pointer}
+.share-icon{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;color:#fff;overflow:hidden;box-shadow:0 2px 5px #00000018;transition:transform .16s,box-shadow .16s}
+.share-item:hover .share-icon{transform:translateY(-2px);box-shadow:0 4px 8px #00000025}
+.share-icon svg{width:17px;height:17px;display:block}
+.share-label{font-size:8px;font-weight:700;line-height:1.2;white-space:nowrap}
+.share-facebook .share-icon{background:#1877f2}.share-x .share-icon{background:#111}.share-pinterest .share-icon{background:#bd081c}.share-line .share-icon{background:#06c755}.share-hatena .share-icon{background:#00a4de;border-radius:8px}.share-copy .share-icon{background:#7c858b}
+.share-item:focus-visible{outline:2px solid #1769aa;outline-offset:3px;border-radius:5px}
+#shareToast{font-size:10px;color:#315d48;min-width:1px}
+@media(max-width:700px){.share-section{margin-left:0;padding-left:0;border-left:0;flex-basis:100%;gap:12px}.share-grid{gap:10px}.share-item{min-width:39px}}
+@media(max-width:380px){.share-grid{gap:6px}.share-icon{width:27px;height:27px}.share-label{font-size:7px}}
 </style></head><body>
-<header><div class="eyebrow"><span class="eyebrow-mark"></span> RikaVerse <span class="eyebrow-en">VIRTUAL SCIENCE & EXPERIMENT PLATFORM</span></div><h1>科学の世界へ、<span class="title-dot">.</span></h1><p><strong>見る、試す、分析する。科学のすべてを、仮想空間で。</strong><br>物理・化学・生物・地学・環境。気になる現象を選び、条件を変えながら結果を確かめよう。</p><div class="header-bottom"><span>観察する</span><span>条件を変える</span><span>違いを見つける</span></div></header>
+<header><div class="eyebrow"><span class="eyebrow-mark"></span> RikaVerse <span class="eyebrow-en">VIRTUAL SCIENCE & EXPERIMENT PLATFORM</span></div><h1>科学の世界へ、<span class="title-dot">.</span></h1><p><strong>見る、試す、分析する。科学のすべてを、仮想空間で。</strong><br>物理・化学・生物・地学・環境。気になる現象を選び、条件を変えながら結果を確かめよう。</p><div class="header-bottom"><span>観察する</span><span>条件を変える</span><span>違いを見つける</span>
+<div class="share-section" aria-label="RikaVerseを共有"><span class="share-heading">共有</span><div class="share-grid">
+<a class="share-item share-facebook" id="shareFacebook" href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebookで共有"><span class="share-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 21v-8h3l.5-3H14V8c0-.9.3-1.5 1.6-1.5H18V3.8c-.5-.1-1.5-.2-2.6-.2-2.7 0-4.5 1.6-4.5 4.6V10H8v3h2.9v8z"/></svg></span><span class="share-label">Facebook</span></a>
+<a class="share-item share-x" id="shareX" href="#" target="_blank" rel="noopener noreferrer" aria-label="Xで共有"><span class="share-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h4l12 18h-4zM20 3 4 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="share-label">X</span></a>
+<a class="share-item share-pinterest" id="sharePinterest" href="#" target="_blank" rel="noopener noreferrer" aria-label="Pinterestで共有"><span class="share-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.6 19.3c0-.8 0-1.8.2-2.6l1.3-5.4s-.3-.6-.3-1.5c0-1.4.8-2.5 1.9-2.5.9 0 1.3.7 1.3 1.5 0 .9-.6 2.3-.9 3.6-.3 1.1.5 2 1.6 2 1.9 0 3.3-2.5 3.3-5.5 0-2.3-1.6-4-4.4-4-3.2 0-5.2 2.4-5.2 5.1 0 .9.3 1.9.8 2.4.2.3.3.4.2.7l-.3 1c-.1.3-.4.4-.7.3-1.3-.5-1.9-2-1.9-3.7 0-2.8 2.4-6.2 7.2-6.2 3.9 0 6.5 2.8 6.5 5.8 0 4-2.2 7-5.5 7-1.1 0-2.2-.6-2.6-1.3l-.7 2.7c-.2.9-.8 1.8-1.2 2.5A10 10 0 1 0 12 2z"/></svg></span><span class="share-label">Pinterest</span></a>
+<a class="share-item share-line" id="shareLine" href="#" target="_blank" rel="noopener noreferrer" aria-label="LINEで共有"><span class="share-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.1 8.2 7.8l-.5 2.1c-.1.5.3.7.7.5l3.3-2.2c4.8-.6 8.3-3.9 8.3-8.2C22 6.6 17.5 3 12 3z"/><path d="M7 9v4h2m1-4v4m2-4v4m2-4v4m2-4v4" fill="none" stroke="#06c755" stroke-width="1.2" stroke-linecap="round"/></svg></span><span class="share-label">LINE</span></a>
+<a class="share-item share-hatena" id="shareHatena" href="#" target="_blank" rel="noopener noreferrer" aria-label="はてなブックマークに追加"><span class="share-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="17" font-size="15" font-weight="900" text-anchor="middle" fill="currentColor">B!</text></svg></span><span class="share-label">はてブ</span></a>
+<button class="share-item share-copy" id="shareCopy" type="button" aria-label="ページのリンクをコピー"><span class="share-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="13" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 7V4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></span><span class="share-label">コピー</span></button>
+</div><span id="shareToast" role="status" aria-live="polite"></span></div></div></header>
 <main><div class="stats"><div class="stat"><b id="total">1000</b><span>学習ツール</span></div><div class="stat"><b>5分野</b><span>物理・化学・生物・地学・環境</span></div><div class="stat"><b>学年検索</b><span>小学3年〜高校</span></div></div>
 <section class="controls"><input id="search" type="search" placeholder="実験名・キーワードで検索（例：粒子、電流、月、光合成）" aria-label="実験名やキーワードで検索"><select id="grade"><option value="">すべての学年</option><option>小3</option><option>小4</option><option>小5</option><option>小6</option><option>中1</option><option>中2</option><option>中3</option><option>高</option></select><select id="sort"><option value="default">おすすめ順</option><option value="name">名前順</option><option value="grade">学年順</option></select></section>
 <div class="filters" id="filters"><button class="chip active" data-sub="すべて">すべて</button><button class="chip" data-sub="物理">⚡ 物理</button><button class="chip" data-sub="化学">🧪 化学</button><button class="chip" data-sub="生物">🌱 生物</button><button class="chip" data-sub="地学">🌎 地学</button><button class="chip" data-sub="環境">♻️ 環境</button></div>
@@ -146,4 +170,48 @@ $("#modal").addEventListener("click",event=>{if(event.target===$("#modal"))close
 document.addEventListener("keydown",event=>{if(event.key==="Escape"&&$("#modal").classList.contains("open"))closeModal()});
 document.querySelectorAll("#filters .chip").forEach(chip=>chip.setAttribute("aria-pressed",String(chip.classList.contains("active"))));
 $("#total").textContent=tools.length.toLocaleString("ja-JP");render();
-</script></body></html>
+</script>
+<script>
+(() => {
+  const pageUrl = "https://bainarinoakaunto.github.io/Science-Teaching-Tools/rika_lab";
+  const pageTitle = document.title || "RikaVerse｜バーチャル科学実験室";
+  const encodedUrl = encodeURIComponent(pageUrl);
+  const encodedTitle = encodeURIComponent(pageTitle);
+  const shareLinks = {
+    shareFacebook: "https://www.facebook.com/sharer/sharer.php?u=" + encodedUrl,
+    shareX: "https://twitter.com/intent/tweet?url=" + encodedUrl + "&text=" + encodedTitle,
+    sharePinterest: "https://pinterest.com/pin/create/button/?url=" + encodedUrl + "&description=" + encodedTitle,
+    shareLine: "https://social-plugins.line.me/lineit/share?url=" + encodedUrl,
+    shareHatena: "https://b.hatena.ne.jp/add?mode=confirm&url=" + encodedUrl
+  };
+  Object.entries(shareLinks).forEach(([id, href]) => {
+    const link = document.getElementById(id);
+    if (link) link.href = href;
+  });
+  const copyButton = document.getElementById("shareCopy");
+  const toast = document.getElementById("shareToast");
+  copyButton?.addEventListener("click", async () => {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(pageUrl);
+      } else {
+        const area = document.createElement("textarea");
+        area.value = pageUrl;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.left = "-9999px";
+        document.body.appendChild(area);
+        area.select();
+        const ok = document.execCommand("copy");
+        area.remove();
+        if (!ok) throw new Error("copy failed");
+      }
+      toast.textContent = "リンクをコピーしました";
+    } catch (_) {
+      toast.textContent = "コピーできません。URLを手動でコピーしてください";
+      window.prompt("RikaVerseのURL", pageUrl);
+    }
+  });
+})();
+</script>
+</body></html>
